@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<serviceType xmlns="http://www.sonicsw.com/sonicxq" name="EmailDeleteConnector" factoryClass="com.sonicsw.xq.service.executor.POJOExecutor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sonicsw.com/sonicxq file%3A%2F%2F%2FC%3A%2FAurea%2FSonic%2FESB12.0%2Fschema%2FserviceType.xsd">
+	<validParams>
+		<init>
+			<stringParam name="host" required="true" >
+				<default edittable="true" editAsRef="false">imap.gmail.com</default>
+			</stringParam>
+			<stringParam name="port" required="true" >
+				<default edittable="true" editAsRef="false">993</default>
+			</stringParam>
+			<stringParam name="user" required="true" >
+				<default edittable="true" editAsRef="false">nca_test@aurea.com</default>
+			</stringParam>
+			<stringParam name="password" required="true" >
+				<default edittable="true" editAsRef="false">orbxhjoxkfypfmkj</default>
+			</stringParam>
+			<stringParam name="ssl" required="true" >
+				<default edittable="true" editAsRef="false">true</default>
+			</stringParam>
+			<stringParam name="com.sonicsw.xq.service.executor.POJOExecutor.delegate" required="false" >
+				<default edittable="true" editAsRef="false">com.aurea.nca.connector.EmailDeleteConnector</default>
+			</stringParam>
+		</init>
+		<runtime>
+			<stringParam name="operationId"/>
+		</runtime>
+	</validParams>	
+	<classLoading>
+		<serviceType>
+   	        <classpath_list>
+    	        <classpath>sonicfs:///workspace/EmailConnector/lib/custom-services-classes.jar</classpath>
+			</classpath_list>
+        </serviceType>
+	</classLoading>
+</serviceType>
