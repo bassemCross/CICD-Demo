@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ParameterSets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="Tuning.xsd">
+	<ContainerParameters id="ctESBParams">
+		<Environment>
+			<JvmArguments>-Xms128m -Xmx512m -XX:MaxPermSize=256m</JvmArguments>
+			<JavaSystemProperties>
+				<Property>
+					<Key>file.encoding</Key>
+					<Value>UTF-8</Value>
+				</Property>
+				<Property>
+					<Key>console.encoding</Key>
+					<Value>UTF-8</Value>
+				</Property>
+			</JavaSystemProperties>
+		</Environment>
+	</ContainerParameters>
+</ParameterSets>

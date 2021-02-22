@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<containerMap>
+		<esbContainerSettings>
+			<!-- This is the Default ESB Container -->
+			<!--
+			<DefaultContainerSetting>
+			    <name>ESBDefaultContainer</name>
+			</DefaultContainerSetting> -->
+			<!-- more than one can be specified -->
+			<DefaultContainerSetting>
+				<!-- ESB Container name-->
+				<name>ctESB</name>
+				<busConnection>jms_defaultConnection</busConnection>
+				<routingHttpConnection>http_defaultConnection</routingHttpConnection>
+				<enablePayloadCapture>true</enablePayloadCapture>
+				<useForLookingGlass>true</useForLookingGlass>
+				<useIntraContainerMessaging>true</useIntraContainerMessaging>
+				<includes>
+					<DefaultIncludePattern>
+						<!-- matched against the service instance info attribute -->
+						<pattern>.*</pattern>
+						<includeProperties>
+							<property>
+								<!-- classpath pattern for the ESB Container -->
+								<name>classpathPattern</name>
+								<!-- regex to match nothing, to have no additional jars on the classpath -->
+								<value>#</value>
+							</property>
+							<property>
+								<name>instances</name>
+								<!-- Number of service instances -->
+								<value>5</value>
+							</property>
+						</includeProperties>
+					</DefaultIncludePattern>
+				</includes>
+			</DefaultContainerSetting>
+		</esbContainerSettings>
+		<mfContainerSettings>
+			<DefaultContainerSetting>
+				<name>@MFESBContainer@</name>
+				<includes>
+					<DefaultIncludePattern>
+						<pattern>ctESB</pattern>
+						<includeProperties>
+							<property>
+								<name>Hosts</name>
+								<value>esbhost</value>
+							</property>
+						</includeProperties>
+					</DefaultIncludePattern>
+				</includes>
+			</DefaultContainerSetting>
+		</mfContainerSettings>
+	</containerMap>
+</configuration>

@@ -1,4 +1,4 @@
-FROM registry2.swarm.devfactory.com/aurea/sonic/releases:sonic-domain-manager-12.0.1
+FROM aurea/sonic/releases:sonic-domain-manager-12.0.1
 
 # What SDM model, environment and hosts should be deployed in this image?
 ENV ENVIRONMENT_ID=Docker \
@@ -16,7 +16,7 @@ RUN apt install procps vim -y
 
 # Add the Messenger deployment model to the container image.
 RUN mkdir -p /Model
-COPY deploy/*.xar /Model/
+COPY / /Model/
 
 # Document ports to publish for access from outside the container.
 EXPOSE 2506

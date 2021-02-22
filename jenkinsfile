@@ -3,14 +3,14 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-               echo 'Build.'
-               sh 'mvn -B -DskipTests clean package'
-            }
-        }
-        stage('Image') { 
-            steps { 
-               echo 'Image.'
-               sh 'docker build docker build -t NewImage .'
+                script {
+                    echo 'Maven clean install'
+                    if (isUnix()) {
+                        sh 'mvn clean install'
+                    }else{
+                        bat 'mvn clean install'
+                    }
+                }
             }
         }
     }
