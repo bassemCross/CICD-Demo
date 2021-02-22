@@ -8,7 +8,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'mvn -B -DskipTests clean package'
                     }else{
-                        powershell 'mvn -B -DskipTests clean package'
+                        bat 'mvn -B -DskipTests clean package'
                     }
                 }
             }
@@ -21,7 +21,7 @@ pipeline {
                     if (isUnix()) {
                         sh 'docker build docker build -t NewImage .'
                     }else{
-                        powershell 'docker build docker build -t NewImage .'
+                        bat 'docker build docker build -t NewImage .'
                     }
                 }
             }
