@@ -4,7 +4,7 @@ pipeline {
         stage('Build') { 
             steps { 
                 script {
-                    echo 'Build.'
+                    echo 'Maven clean install'
                     if (isUnix()) {
                         sh 'mvn clean install'
                     }else{
