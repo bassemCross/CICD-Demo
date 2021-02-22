@@ -19,6 +19,13 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<url>http://localhost:8081/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+
 	<repositories>
 		<repository>
 			<id>sonic-releases</id>
