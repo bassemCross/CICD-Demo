@@ -1,4 +1,4 @@
-FROM registry2.swarm.devfactory.com/aurea/sonic/releases:sonic-domain-manager-12.0.1
+FROM sonic-domain-manager-12.0.1
 
 # What SDM model, environment and hosts should be deployed in this image?
 ENV ENVIRONMENT_ID=Docker \
