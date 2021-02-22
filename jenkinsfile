@@ -3,7 +3,14 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-               echo 'This is a minimal pipeline.'
+               echo 'Build.'
+               sh 'mvn -B -DskipTests clean package'
+            }
+        }
+        stage('Image') { 
+            steps { 
+               echo 'Image.'
+               sh 'docker build docker build -t NewImage .'
             }
         }
     }
