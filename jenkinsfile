@@ -19,9 +19,9 @@ pipeline {
                 script {
                     echo 'Build.'
                     if (isUnix()) {
-                        sh 'docker build docker build -t sonic .'
+                        sh 'docker build -t sonic .'
                     }else{
-                        bat 'docker build docker build -t sonic .'
+                        bat 'docker build -t sonic .'
                     }
                 }
             }
