@@ -13,5 +13,19 @@ pipeline {
                 }
             }
         }
+        stage('Image') { 
+            steps { 
+                script {
+                    echo 'Create Image.'
+                    dir("target/sonicesb/sdm") {
+                        if (isUnix()) {
+                            sh 'docker build -t sdm .'
+                        }else{
+                            bat 'docker build -t sdm .'
+                        }
+                    }
+                }
+            }
+        }
     }
 }
