@@ -3,14 +3,27 @@ pipeline {
     stages { 
         stage('Build') { 
             steps { 
-               echo 'Build.'
-               sh 'mvn -B -DskipTests clean package'
+                script {
+                    echo 'Build.'
+                    if (isUnix()) {
+                        sh 'mvn -B -DskipTests clean package'
+                    }else{
+                        powershell 'mvn -B -DskipTests clean package'
+                    }
+                }
             }
         }
         stage('Image') { 
             steps { 
                echo 'Image.'
-               sh 'docker build docker build -t NewImage .'
+                script {
+                    echo 'Build.'
+                    if (isUnix()) {
+                        sh 'docker build docker build -t NewImage .'
+                    }else{
+                        powershell 'docker build docker build -t NewImage .'
+                    }
+                }
             }
         }
     }
