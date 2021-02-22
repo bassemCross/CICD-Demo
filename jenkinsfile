@@ -6,22 +6,9 @@ pipeline {
                 script {
                     echo 'Build.'
                     if (isUnix()) {
-                        sh 'mvn -B -DskipTests clean package'
+                        sh 'mvn clean install'
                     }else{
-                        bat 'mvn -B -DskipTests clean package'
-                    }
-                }
-            }
-        }
-        stage('Image') { 
-            steps { 
-               echo 'Image.'
-                script {
-                    echo 'Build.'
-                    if (isUnix()) {
-                        sh 'docker build -t sonic .'
-                    }else{
-                        bat 'docker build -t sonic .'
+                        bat 'mvn clean install'
                     }
                 }
             }
