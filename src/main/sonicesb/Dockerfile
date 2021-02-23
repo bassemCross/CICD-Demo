@@ -5,7 +5,7 @@ ENV ENVIRONMENT_ID=Docker \
     LOGICAL_HOSTS=dshost,XARHost \
     SDM_DIR=/Model
 
-# How can the container management scripts connect to the deployed domain?
+# How can the container management scripts connect to the deployed domain?.
 ENV DOMAIN_NAME=dmNCA \
     DS_CONNECTION_URLS=tcp://localhost:2506 \
     DS_USERNAME=Administrator \

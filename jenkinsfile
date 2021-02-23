@@ -19,9 +19,9 @@ pipeline {
                     echo 'Create Image.'
                     dir("target/sonicesb/sdm") {
                         if (isUnix()) {
-                            sh 'docker build -t sdm .'
+                            sh 'docker build -t sdm'+env.BRANCH_NAME+' .'
                         }else{
-                            bat 'docker build -t sdm .'
+                            bat 'docker build -t sdm'+env.BRANCH_NAME+' .'
                         }
                     }
                 }
